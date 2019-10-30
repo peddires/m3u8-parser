@@ -37,6 +37,7 @@ public class MediaPlaylistParser extends AbstractPlaylistParser<MediaPlaylist, M
     private final ByteRangeParser byteRangeParser = new ByteRangeParser();
     private final SegmentMapParser segmentMapParser = new SegmentMapParser(byteRangeParser);
     private final SegmentKeyParser segmentKeyParser = new SegmentKeyParser();
+    private final CueOutParser cueOutParser = new CueOutParser();
 
     @Override
     Builder newBuilder() {
@@ -103,6 +104,10 @@ public class MediaPlaylistParser extends AbstractPlaylistParser<MediaPlaylist, M
 
             case EXT_X_DISCONTINUITY:
                 mediaSegmentBuilder.discontinuity(true);
+                break;
+
+            case EXT_X_CUE_OUT:
+                mediaSegmentBuilder.cueOut(cueOutParser.parse(attributes));
                 break;
 
             case EXT_X_DISCONTINUITY_SEQUENCE:

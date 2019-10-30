@@ -32,4 +32,8 @@ public class MediaPlaylistParserTest {
     public void parse5() throws Exception {
         parser.readPlaylist(Paths.get("src/test/resources/media/variant.m3u8"));
     }
+    @Test
+    public void parse6() throws Exception {
+        parser.readPlaylist(Paths.get("src/test/resources/media/scte-liveMediaPlaylist.m3u8"));
+    }
 }

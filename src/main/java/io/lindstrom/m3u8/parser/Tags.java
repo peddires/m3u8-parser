@@ -44,6 +44,9 @@ class Tags {
     // 4.3.2.7 EXT-X-DATERANGE
     static final String EXT_X_DATERANGE = "#EXT-X-DATERANGE";
 
+    // 4.3.2.7 SCTE-35
+    static final String EXT_X_CUE_OUT = "#EXT-X-CUE-OUT";
+
 
     /*
      * 4.3.3 Media Playlist Tags
